@@ -1,13 +1,319 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    font-family: "Josefin Sans", Sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: rgb(240, 240, 240) !important; */
+  /* background-color: rgb(252, 247, 249) !important; */
+  background-color: rgb(247, 240, 250) !important;
+
+  color: #404040;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navWrapper{
+  background-color: #fff;
+  min-height: 80px;
+  padding: 10px 6% !important;
+color: rgb(71, 70, 70) !important;
+
+}
+Nav a{
+color: rgb(71, 70, 70) !important;
+
+}
+li{
+  list-style-type: none;
+  display: inline;
+}
+
+a{
+  text-decoration: inherit !important;
+  color: rgb(253, 253, 253) !important;
+}
+.brandLogo{
+  font-size: 16px;
+  font-weight: 700;
+  color: #6a00f4  !important;
+
+}
+.itemImg{
+  width: 99%;
+  height: 150px;
+  margin: auto
+}
+.card{
+  float: left;
+  height: 270px;
+}
+.card .card-image .card-title{
+  color: black;
+  font-weight: 400
+}
+.cart{
+  margin-top:40px;
+}
+.collection .collection-item{
+  display: flex;
+}
+.collection-item.avatar .title {
+  font-size: 20px;
+  font-weight: 500;
+  color:  rgb(182, 24, 129);
+  display: block;
+  margin-bottom: 20px;
+  
+}
+.collection .collection-item img{
+  width: 150px;
+  margin-right: 25px;
+}
+.item-desc{
+  align-self:center;
+}
+.card-title{
+  font-weight: 800;
+  font-size: 14px;
+}
+.font-24{
+  font-size: 24px;
+}
+.font-16{
+  font-size: 16px;
+}
+.font-36{
+  font-size: 36px;
+}
+.font-26{
+  font-size: 26px;
+}
+.font-13{
+  font-size: 13px;
+}
+.add-to-cart{
+  position: relative;
+top: 10px;
+border: none;
+background-color: rgb(248, 242, 248) !important;
+color: rgb(54, 10, 54);
+border-bottom: 2px solid rgb(252, 31, 79);
+outline: none !important;
+}
+.add-to-cart:hover{
+  position: relative;
+top: 10px;
+border: none;
+background-color: rgb(248, 242, 248) !important;
+color: rgb(252, 31, 79);
+border-bottom: 2px solid  rgb(54, 10, 54);
+outline: none !important;
+font-weight: 600;
+}
+.showbtn:hover{
+  transform: scale(1.004);
+}
+.showbtn{
+cursor: pointer;
+min-height: 330px;
+transition: transform .3s;
+}
+.firstImg{
+border-bottom: 2px solid #EBE7E7;
+width:100% !important;
+background: url(./assests/images/modelsimg/angela-bailey-jlo7Bf4tUoY-unsplash.jpg);
+height: 600px;
+background-repeat: no-repeat;
+background-size: 100% 100% !important;
+object-fit: cover;
+opacity: 0.88;
+}
+.bg-txt{
+  position:relative;
+   top:390px !important;
+    color: #6a00f4;
+  }
+
+.bg-shoes{
+  background-image: url("https://cbu01.alicdn.com/img/ibank/2020/314/750/20081057413_1744813868.220x220xz.jpg?_=2020");
+  height: 400px;
+background-repeat: no-repeat;
+background-size: 100% !important;
+
+}
+.bg-bags{
+  background-image: url("https://cbu01.alicdn.com/img/ibank/2019/260/984/12496489062_1870764035.220x220.jpg?_=2020");
+  height: 400px;
+background-repeat: no-repeat;
+background-size: 100% !important;
+}
+.bg-watch{
+  background-image: url("https://cbu01.alicdn.com/img/ibank/2019/511/279/12176972115_577040841.220x220xz.jpg?_=2020");
+  height: 400px;
+background-repeat: no-repeat;
+background-size: 100%!important;
+}
+/* bags */
+/* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2019/260/984/12496489062_1870764035.220x220.jpg?_=2020");" */
+/* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2019/885/586/11103685588_1361703176.220x220xz.jpg?_=2020");"   36yuan */
+/* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2020/213/655/20667556312_1430372067.220x220xz.jpg?_=2020");"   20yuan */
+/* background-image: url("https://cbu01.alicdn.com/img/ibank/2020/944/838/21900838449_1150742640.220x220.jpg?_=2020");  70yuan */
+/* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2019/328/161/11711161823_1184839160.220x220xz.jpg?_=2020");" 63yuan */
+/* wrist watch */
+/* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2019/511/279/12176972115_577040841.220x220xz.jpg?_=2020");"  28 yuan */
+/* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2020/025/049/20719940520_945279467.220x220xz.jpg?_=2020");"  47yuan */
+
+/* about */
+.aboutCoz{
+position: relative;
+ top: 23%
+}
+.aboutTitle{
+position: relative; 
+top:20%
+}
+/* footer */
+footer {
+  display: flex;
+  justify-content: flex-end;
+  background: #191919;
+  color: white;
+  margin-bottom: 0;
+}
+footer li{
+  display: block;
+  color: white;
+}
+li a {
+  text-decoration: "none";
+  color: white;
+  font-weight: 300;
+
+}
+
+.footer-container {
+  padding: 5rem 0;
+}
+.footer-input {
+  background-color: #14041d !important;
+  color: #fff !important;
+  border: 1px solid #fff;
+  border-radius: 2px 0 0 2px !important;
+  outline: none !important;
+
+}
+.footer-input::placeholder {
+  color: #fff !important;
+}
+.btn-footer-inpbtn {
+  background-color: rgb(241, 239, 239) !important;
+  border-radius: 0px 2px 2px 0px !important;
+  width: 30px !important;
+  transition: width 0.2s !important;
+  transition-timing-function: ease-in-out !important;
+  outline: none !important;
+
+}
+.btn-footer-inpbtn:hover {
+  width: 80px !important;
+  transition: width 0.2s !important;
+  transition-timing-function: ease-in-out !important;
+  background-color: rgb(11, 172, 11) !important;
+  outline: none !important;
+}
+@media only screen and (max-width: 600px) {
+ 
+  /* footer responsive */
+  .footer-container {
+    font-size: 0.62rem !important;
+  }
+  h5 {
+    font-size: 0.9rem !important;
+  }
+  .footer-input::placeholder {
+    color: #fff !important;
+    font-size: 0.63rem !important;
+  }
+  .footer-link-box{
+    position: relative !important;
+    right: 0 !important;
+  }
+
+  /* background */
+  .bg-txt{
+    position:relative;
+     top:260px !important;
+      /* color:rgb(156, 9, 90); */
+    color:#6a00f4;
+
+    }
+   
+    .firstImg{
+      border-bottom: 2px solid #EBE7E7;
+      height: 400px;
+      background-repeat: no-repeat;
+      background-size: cover!important;
+      }
+    /* fonts */
+    .font-36{
+      font-size: 32px
+    }
+    .font-24{
+      font-size: 22px
+    }
+    .font-26{
+      font-size: 24px
+    }
+    /* remove border right */
+    .noRborder{
+      border-right: none;
+    }
+    /* items */
+    .showbtn{
+      cursor: pointer;
+      min-height: 430px !important;
+      transition: transform .3s;
+      }
+}
+.footer-link-box{
+position: relative;
+right: -400px;
+}
+.footer-link-box1{
+  position: relative;
+  /* right: -400px; */
+  }
+.footerlist  a:hover {
+  text-decoration-line: none !important;
+  color: rgb(231, 156, 241) !important;
+  font-size: 1.05rem;
+}
+.footerlist > a {
+  vertical-align: middle !important;
+  margin: auto;
+}
+.footerlist {
+  height: 40px !important;
+}
+.contact-us {
+  background-color: #fff;
+  padding: 80px 0%;
+}
+.react-animate-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  background: #fff;
+  border-radius: 5px;
+  font-size: 10px;
+  box-shadow: 0 0 8px 1px rgba(0,0,0, .1);
 }
