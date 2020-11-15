@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Carousel from 'react-bootstrap/Carousel'
-
 import { addToCart } from './actions/cartActions';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faPlusCircle} from "@fortawesome/free-solid-svg-icons";
 import bgImage from "../assests/images/modelsimg/sincerely.jpg"
 import abtImg from "../assests/images/modelsimg/heather-ford-5gkYsrH_ebY-unsplash (2).jpg"
 import imgSlideOne from "../assests/images/modelsimg/edited.jpg"

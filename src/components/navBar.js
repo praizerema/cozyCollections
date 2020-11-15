@@ -27,12 +27,7 @@ class NavBar extends Component{
     </Navbar>
         )
     }
-}
-
-
-export default NavBar;
-
-{/* <nav className="navWrapper sticky-top">
+    /* <nav className="navWrapper sticky-top">
     <div className="container">
     <Link to="/" className="brandLogo">Shopping</Link>
         <ul className="float-right">
@@ -42,4 +37,9 @@ export default NavBar;
             <li className="px-5"> <Link to ="/cart" > <FontAwesomeIcon icon={faShoppingCart} /> </Link></li>
         </ul>
     </div>
-</nav> */}
+</nav> */
+}
+
+
+export default NavBar;
+

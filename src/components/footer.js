@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {Fade, Zoom,Flip,Slide } from 'react-reveal';
+import {Slide } from 'react-reveal';
 
 export default function Footer() {
 
@@ -47,17 +47,17 @@ export default function Footer() {
               the terms of our Privacy Statement and consent to the use of data
               in accordance there with. */} </div>
                             <div className="mt-4 pt-1">
-                                <a href="">
+                                <a href="/">
                                     <img src={`/images/whatsapptransparent.png`}
                                         alt="whatsapp"
                                         width="28"/>
                                 </a>
-                                <a href="" className="mx-4">
+                                <a href="/" className="mx-4">
                                     {" "}
                                     <img src={`/images/instagram.svg`}
                                         alt="instagram"/>
                                 </a>
-                                <a href="">
+                                <a href="/">
                                     {" "}
                                     <img src={`/images/twitter.svg`}
                                         alt="twitter"/>

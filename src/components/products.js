@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from './actions/cartActions';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faPlusCircle} from "@fortawesome/free-solid-svg-icons";
 import $ from "jquery";
-import {Fade, Zoom,Flip } from 'react-reveal';
+import {Fade} from 'react-reveal';
 
 
 class Products extends Component{
@@ -14,7 +12,6 @@ class Products extends Component{
     }
     componentDidMount(){
         $(".add-to-cart").hide()
-        // $.grep(this.props.items, function(e){ return e.id === key; })
         $(".showbtn").hover(function(){
             $(this).find(".add-to-cart").show()
         },
@@ -40,8 +37,8 @@ class Products extends Component{
         })
         return(
             <div className= "container ">
-                <h3 className="text-center pb-3">Enjoy your shopping</h3>
-                <div className="box row py-2">
+                {/* <h3 className="text-center pb-3">Enjoy your shopping</h3> */}
+                <div className="box row py-5">
                     {itemList}
                 </div>
             </div>
