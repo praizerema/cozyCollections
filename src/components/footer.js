@@ -1,10 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {Fade, Zoom,Flip,Slide } from 'react-reveal';
 
 export default function Footer() {
 
     return (
-        <footer className="mb-0 pb-0">
+        <footer className="mb-0 pb-0 bottom">
+       
+
             <div className="container ">
                 <div className="footer-container row ">
 
@@ -63,13 +66,17 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+                <Slide top> 
                 <div className="text-center py-4"
                     style={
                         {borderTop: "1px solid #9c9c9c"}
                 }>
                     2020 CozyCollections
                 </div>
+            </Slide>
+
             </div>
+
         </footer>
     );
 }

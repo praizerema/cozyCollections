@@ -5,6 +5,8 @@ import { removeItem,addQuantity,subtractQuantity} from './actions/cartActions';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faAngleUp, faAngleDown} from "@fortawesome/free-solid-svg-icons";
 import Recipe from "./recipe"
+import {faPlusCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
+
 class Cart extends Component{
  //to remove the item completely
  handleRemove = (id)=>{
@@ -26,44 +28,63 @@ handleSubtractQuantity = (id)=>{
                     return(
                        
                         <li className="collection-item avatar" key={item.id}>
-                                    <div className="item-img "> 
-                                        <img src={item.img} alt={item.img} className=""/>
+                       <div className="container row cart-wrap">
+                                    <div className="col-lg-5 col-sm-12"> 
+                                    <div className="title col-12">{item.name}</div>
+                                        <img className="col-12" src={item.img} alt={item.img}/>
+              <p className="col-12 mt-3"><b>Price: &#8358;{item.price}</b></p> 
+
                                     </div>
                                 
-                                    <div className="item-desc row">
-                                        <span className="title col-12">{item.title}</span>
-                                        <p className="col-12">{item.desc}</p>
-                                        <p className="col-12"><b>Price: {item.price}&#8358;</b></p> 
-                                        <p className="col-6">
-                                            <b>Quantity: {item.quantity}</b> 
-                                        </p>
-                                        <div className="add-remove col-6">
-                                            <Link to="/cart"><FontAwesomeIcon icon={faAngleUp} onClick={()=>{this.handleAddQuantity(item.id)}} style= {{color: "black"}}/></Link>
-                                            <Link to="/cart"><FontAwesomeIcon icon={faAngleDown} onClick={()=>{this.handleSubtractQuantity(item.id)}} style= {{color: "black"}}/></Link>
+                                    <div className=" col-lg-6 col-sm-12 mt-4 row">
+                                        <div className="col-12">{item.desc}</div>
+                                        <div className="col-lg-6 col-sm-9">
+                                            <div className="col-12  mb-2"><b>Qty</b></div>
+                                            <div className="qty-border col-12 row mx-0">
+                                        <div className="col-4 text-center border-right">
+                                        <Link to="/cart">  <FontAwesomeIcon icon={faPlusCircle} onClick={()=>{this.handleAddQuantity(item)}}  style={{color:" green"}}/></Link>
+                                            
                                         </div>
-                                        <button className="btn-danger remove" onClick={()=>{this.handleRemove(item.id)}}>Remove</button>
+                                        <div className="col-4 border-right text-center"><span> {item.quantity}</span></div>
+                                        <div className="col-4 text-center">
+                                        <Link to="/cart"> <FontAwesomeIcon icon={faMinusCircle} onClick={()=>{this.handleSubtractQuantity(item)}} style= {{color: "red"}}/></Link>
+                                        </div>
+                                        {/* <div className="add-remove col-5 text-left">
+                                            <Link to="/cart"><FontAwesomeIcon icon={faAngleUp} onClick={()=>{this.handleAddQuantity(item)}} style= {{color: "black"}}/></Link>
+                                            <Link to="/cart"><FontAwesomeIcon icon={faAngleDown} onClick={()=>{this.handleSubtractQuantity(item)}} style= {{color: "black"}}/></Link>
+                                        </div> */}
+                                        </div>
+                                        </div>
+                                        <div className="col-lg-4 col-sm-3 mt-4"> <button className="btn-danger remove" onClick={()=>{this.handleRemove(item)}}>Remove</button>
+
+                                        </div>
+                                       
                                     </div>
                                     
-                               </li>                        
+                               </div>     
+                               </li>                  
                     )
                 })
             ):
 
              (
                  <div>
-                 <p>Nothing has been added to cart</p>
+                 <h4>Your cart is empty</h4>
                 <a href="/products" style={{color:"#010101"}}>Go back to shop</a>
                  </div>
                
              )
+             if(addedItemes){
+                        
+            }
        return(
-            <div className="container" style={{height: "100vh"}}>
+            <div className="container h-100" style={{minHeight: "100vh"}}>
                 <div className="cart">
-                    <h5>You have ordered:</h5>
                     <ul className="collection">
                         {addedItemes}
                     </ul>
                 </div>  
+                
                 <Recipe />
                 {/* Recipe added */}
             </div>
@@ -74,7 +95,6 @@ handleSubtractQuantity = (id)=>{
 const mapStateToProps = (state)=>{
     return{
         items: state.addedItems
-        //addedItems: state.addedItems
     }
 }
 

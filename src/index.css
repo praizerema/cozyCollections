@@ -1,8 +1,5 @@
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
     font-family: "Josefin Sans", Sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,9 +36,10 @@ a{
   color: rgb(253, 253, 253) !important;
 }
 .brandLogo{
-  font-size: 16px;
+  font-size: 20px !important;
   font-weight: 700;
-  color: #6a00f4  !important;
+  color: #f400e8  !important;
+  margin-right: 40px !important;
 
 }
 .itemImg{
@@ -119,6 +117,10 @@ font-weight: 600;
 .showbtn:hover{
   transform: scale(1.004);
 }
+.slides{
+width: 100%;
+height: 500px
+}
 .showbtn{
 cursor: pointer;
 min-height: 330px;
@@ -137,7 +139,7 @@ opacity: 0.88;
 .bg-txt{
   position:relative;
    top:390px !important;
-    color: #6a00f4;
+    color: #f400e8;
   }
 
 .bg-shoes{
@@ -157,7 +159,7 @@ background-size: 100% !important;
   background-image: url("https://cbu01.alicdn.com/img/ibank/2019/511/279/12176972115_577040841.220x220xz.jpg?_=2020");
   height: 400px;
 background-repeat: no-repeat;
-background-size: 100%!important;
+background-size: 100% !important;
 }
 /* bags */
 /* style="background-image: url("https://cbu01.alicdn.com/img/ibank/2019/260/984/12496489062_1870764035.220x220.jpg?_=2020");" */
@@ -201,7 +203,7 @@ li a {
   padding: 5rem 0;
 }
 .footer-input {
-  background-color: #14041d !important;
+  background-color: #191919 !important;
   color: #fff !important;
   border: 1px solid #fff;
   border-radius: 2px 0 0 2px !important;
@@ -248,24 +250,33 @@ li a {
   /* background */
   .bg-txt{
     position:relative;
-     top:260px !important;
-      /* color:rgb(156, 9, 90); */
-    color:#6a00f4;
+     top:200px !important;
+    color:#f400e8;
 
     }
-   
+    .slides{
+      width: 100%;
+      height: 300px !important
+      }
+      .slides img{
+        height: 300px !important
+        }
     .firstImg{
       border-bottom: 2px solid #EBE7E7;
       height: 400px;
       background-repeat: no-repeat;
       background-size: cover!important;
       }
+      .aboutCoz{
+        position: relative;
+       margin-bottom: 130px !important;
+        }
     /* fonts */
     .font-36{
-      font-size: 32px
+      font-size: 30px
     }
     .font-24{
-      font-size: 22px
+      font-size: 20px
     }
     .font-26{
       font-size: 24px
@@ -277,7 +288,7 @@ li a {
     /* items */
     .showbtn{
       cursor: pointer;
-      min-height: 430px !important;
+      min-height: 350px !important;
       transition: transform .3s;
       }
 }

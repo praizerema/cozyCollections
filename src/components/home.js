@@ -72,14 +72,14 @@ componentDidMount(){
 <div className="col-lg-4 text-center col-sm-12 mb-5"><div className="font-24">Affordable</div><div className="font-16">We sell at very affordable prices and offer discount based on your order</div></div>
 
                     </div>
-                    <div className="mt-5 mb-5">
+                    <div className="mt-5 ">
                         <div className="text-center font-36 font-weight-bold mb-3">New Arrivals</div>
                         <div className="text-center mb-5 font-16">Check out some of our new arrivals, no doubt<br/>  they will look really nice on you</div>
                         <div className="row  mx-0 px-0">
                             
                             {newArrivals.map(item =>(
                                 
-                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-5"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
+                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 "  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
                                     <div className="showbtn text-center " style={{minHeight: "320px"}}><div><img src={item.img} alt="" width="100%"/></div>
                                     <div className="font-weight-bold font-13 mt-2">{item.title}</div>
 
@@ -95,8 +95,8 @@ componentDidMount(){
                         </div>
                     </div>
                     
-                    <div className="row mx-0 my-5 pt-5 px-0">
-                        <div className="col-lg-6 col-sm-12" style={{width: "100%", height:"500px" }}>
+                    <div className="row mx-0 mt-5  pt-3 px-0">
+                        <div className="col-lg-6 col-sm-12 slides" >
                         <Slide bottom>
                         <Carousel controls= {false}>
   <Carousel.Item interval={200}>
@@ -153,7 +153,7 @@ componentDidMount(){
 </Carousel>
                             </Slide>
                         </div>
-                        <div className="col-lg-6 col-sm-12 mb-5">
+                        <div className="col-lg-6 col-sm-12 ">
                         <Slide right>
                             <div className="font-26 font-weight-bold aboutTitle" >
 Cozy collections is the modern fashion accessories market</div>
@@ -165,11 +165,11 @@ Cozy collections is the modern fashion accessories market</div>
 
                     </div>
                     <div>
-                        <div className="text-center font-36 font-weight-bold mb-3">Recently Ordered Items</div>
+                        <div className="text-center font-36 font-weight-bold ">Recently Ordered </div>
                         <div className="text-center mb-5 font-16">Here are a few of our recently ordered goods<br/> </div>
                         <div className="row  mx-0 px-0">
                             {newArrivals.map(item =>(
-                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-5"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
+                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-4"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
                                     <div className="showbtn text-center"><div><img src={item.img} alt="" width="100%"/></div>
                                     <div className="font-weight-bold font-13 mt-2">{item.title}</div>
 
@@ -185,7 +185,7 @@ Cozy collections is the modern fashion accessories market</div>
                             }
                         </div>
                     </div>
-                    <div className="row  mx-0 px-0 mt-5 pt-5">
+                    <div className="row  mx-0 px-0 mt-5 ">
                         <div className="col-lg-4 "><Fade left><div className="bg-shoes"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Shoes</div></div></Fade></div>
                         <div className="col-lg-4 "><Zoom><div className="bg-bags"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Bags</div></div></Zoom></div>
                         <div className="col-lg-4 "><Fade right><div className="bg-watch"> <div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Watches</div></div></Fade></div>
