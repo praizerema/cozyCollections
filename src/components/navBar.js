@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import {Navbar, Nav} from "react-bootstrap";
-
+import { connect } from 'react-redux';
+ 
 class NavBar extends Component{
     render(){
         return(
 
 <Navbar bg="light" expand="lg" className="navWrapper">
         <Navbar.Brand href="/" className="brandLogo">CozyCollections</Navbar.Brand>
-        <Nav.Item > <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /></Link></Nav.Item>
+        <Nav.Item > <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><span className="font-16 cl-f400e8" style={{ color: "#f400e8"}}>{this.props.items.length}</span></Link></Nav.Item>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
 
@@ -40,6 +41,11 @@ class NavBar extends Component{
 </nav> */
 }
 
-
-export default NavBar;
+const mapStateToProps = (state)=>{
+console.log("nav:" + state.addedItems.length)
+    return{
+        items: state.addedItems
+    }
+}
+export default connect(mapStateToProps)(NavBar);
 

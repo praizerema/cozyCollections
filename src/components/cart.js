@@ -92,6 +92,7 @@ handleSubtractQuantity = (id)=>{
 }
 
 const mapStateToProps = (state)=>{
+    console.log("cart:" + state.addedItems)
     return{
         items: state.addedItems
     }
