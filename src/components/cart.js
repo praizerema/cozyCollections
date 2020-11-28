@@ -7,6 +7,17 @@ import Recipe from "./recipe"
 import {faPlusCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
 
 class Cart extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            first_name:"",
+            last_name:"",
+            email:"",
+            address:"",
+            phone_no: ""
+
+        }
+    }
  //to remove the item completely
  handleRemove = (id)=>{
     this.props.removeItem(id);
@@ -77,14 +88,42 @@ handleSubtractQuantity = (id)=>{
                         
             }
        return(
-            <div className="container h-100" style={{minHeight: "100vh", marginTop: "90px"}}>
-                <div className="cart">
+            <div className="container row h-100" style={{minHeight: "100vh", marginTop: "90px"}}>
+                <div className="cart col-8">
                     <ul className="collection">
                         {addedItemes}
                     </ul>
+                      <Recipe />
                 </div>  
-                
-                <Recipe />
+                <div className="col-4">
+                    <div className="customerInfoFormContainer">
+                        <form action="">
+                            <div className="font-weight-bold text-center mb-4">Kindly fill in your details before proceeding to checkout</div>
+                            <div className="form-group">
+                                <label htmlFor="firstName">First Name</label>
+                                <input type="text" name="firstName" className="form-control" value={this.state.first_name}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last Name</label>
+                                <input type="text" name="lastName" className="form-control" value={this.state.last_name}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">Email</label>
+                                <input type="text" name="email" className="form-control" value={this.state.email}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="phoneNo">Phone Number</label>
+                                <input type="text" name="phoneNo" className="form-control" value={this.state.phone_no}/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="deliveryLocation">Address</label>
+                                <input type="text" name="deliveryLocation" className="form-control" value={this.state.address}/>
+                            </div>
+                            <div><button className="btn">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+              
                 {/* Recipe added */}
             </div>
        )
