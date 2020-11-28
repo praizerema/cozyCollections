@@ -9,7 +9,7 @@ class NavBar extends Component{
     render(){
         return(
 
-<Navbar bg="light" expand="lg" className="navWrapper">
+<Navbar bg="light" expand="lg" className="navWrapper fixed-top">
         <Navbar.Brand href="/" className="brandLogo">CozyCollections</Navbar.Brand>
         <Nav.Item > <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><span className="font-16 cl-f400e8" style={{ color: "#f400e8"}}>{this.props.items.length}</span></Link></Nav.Item>
 

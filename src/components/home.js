@@ -11,11 +11,19 @@ import imgSlideFour from "../assests/images/modelsimg/mike-montgomery-mXkafXEgOl
 
 import $ from "jquery";
 import {Fade, Zoom,Flip,Slide } from 'react-reveal';
+import AddToCartDecision from './addToCartDecision';
 class Home extends Component{
+constructor(props){
+  super(props);
+  this.state={
 
+  }
+
+}
     handleClick = (id)=>{
       console.log(id)
         this.props.addToCart(id);
+        this.setState({showAddCartDecision: true})
     }
 componentDidMount(){
     $(".add-to-cart").hide()
@@ -191,6 +199,23 @@ Cozy collections is the modern fashion accessories market</div>
     
               
                 </div>
+                {
+                  this.state.showAddCartDecision &&(
+                    <div className="card  row mt-5 showView"> 
+                      <span className="close text-right"
+                                onClick={
+                                    e => this.setState({showAddCartDecision: false})
+                            }>
+                                    &#10005;
+                            </span>
+                        <div className="viewBody">
+                           
+                            <AddToCartDecision/>
+
+                        </div>
+                    </div>
+                  )
+                }
             </div>
         )
     }
