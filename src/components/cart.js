@@ -77,7 +77,7 @@ handleSubtractQuantity = (id)=>{
                         
             }
        return(
-            <div className="container h-100" style={{minHeight: "100vh"}}>
+            <div className="container h-100" style={{minHeight: "100vh", marginTop: "90px"}}>
                 <div className="cart">
                     <ul className="collection">
                         {addedItemes}
