@@ -3,12 +3,19 @@ import { connect } from 'react-redux';
 import { addToCart } from './actions/cartActions';
 import $ from "jquery";
 import {Fade} from 'react-reveal';
+import AddToCartDecision from './addToCartDecision';
 
 
 class Products extends Component{
+constructor(props){
+    super(props);
+    this.state={
 
+    }
+}
     handleClick = (id)=>{
         this.props.addToCart(id);
+        this.setState({showAddCartDecision: true})
     }
     componentDidMount(){
         $(".add-to-cart").hide()
@@ -41,6 +48,23 @@ class Products extends Component{
                 <div className="box row py-5">
                     {itemList}
                 </div>
+                {
+                  this.state.showAddCartDecision &&(
+                    <div className="card  row mt-5 showView"> 
+                      <span className="close text-right"
+                                onClick={
+                                    e => this.setState({showAddCartDecision: false})
+                            }>
+                                    &#10005;
+                            </span>
+                        <div className="viewBody">
+                           
+                            <AddToCartDecision/>
+
+                        </div>
+                    </div>
+                  )
+                }
             </div>
         )
     }

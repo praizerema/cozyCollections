@@ -11,7 +11,7 @@ class NavBar extends Component{
 
 <Navbar bg="light" expand="lg" className="navWrapper fixed-top">
         <Navbar.Brand href="/" className="brandLogo">CozyCollections</Navbar.Brand>
-        <Nav.Item > <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><span className="font-16 cl-f400e8" style={{ color: "#f400e8"}}>{this.props.items.length}</span></Link></Nav.Item>
+        <Nav.Item > <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><span className="font-16 cl-f400e8" style={{ color: "#f400e8", left: "-3px", position:"relative", backgroundColor:"#f3f3f3", borderRadius:"50%", fontSize: "12px", padding: "2px"}}>{this.props.items.length === 0? "":this.props.items.length}</span></Link></Nav.Item>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
 
