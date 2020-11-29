@@ -59,7 +59,7 @@ constructor(props){
                             </span>
                         <div className="viewBody">
                            
-                            <AddToCartDecision/>
+                            <AddToCartDecision onClickContinue={e => this.setState({showAddCartDecision: false})}/>
 
                         </div>
                     </div>

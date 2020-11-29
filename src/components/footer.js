@@ -5,7 +5,7 @@ import {Slide } from 'react-reveal';
 export default function Footer() {
 
     return (
-        <footer className="mb-0 pb-0 bottom">
+        <footer className="mb-0 pb-0 bottom ">
        
 
             <div className="container ">

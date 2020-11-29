@@ -9,7 +9,7 @@ const AddToCartDecision =(props) =>{
              </div>
         <div className="linksContainer">
           <Link className="linksBtn" to="/cart">View Cart</Link>
-            <Link className="linksBtn" to="/products">Continue</Link>
+            <Link className="linksBtn" to="/products" onClick={props.onClickContinue}>Continue</Link>
         </div>
     </div>
     )
