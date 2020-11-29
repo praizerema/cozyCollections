@@ -31,9 +31,16 @@ handleSubtractQuantity = (id)=>{
     this.props.subtractQuantity(id);
     
 }
+handleNames=(e)=>{
+    const value = e.target.value;
+    this.setState({
+      ...this.state,
+      [e.target.name]: value
+    });
+}
     render(){
               
-        let addedItemes = this.props.items.length ?
+        let addedItemes = 
             (  
                 this.props.items.map(item=>{
                     return(
@@ -76,35 +83,26 @@ handleSubtractQuantity = (id)=>{
                                </li>                  
                     )
                 })
-            ):
-
-             (
-                 <div>
-                 <h4>Your cart is empty</h4>
-                <a href="/products" style={{color:"#010101"}}>Go back to shop</a>
-                 </div>
-               
-             )
-let cartContent= <div className="h-100 px-5" style={{marginTop:"100px", minHeight: "80vh"}}><h1>You have not added any item to cart.</h1></div>
+            )
+let cartContent= <div className="h-100 px-5 text-center" style={{ marginTop: "100px"}}><h1>Your Cart is Empty.</h1></div>
 if(this.props.items.length >0){
-    cartContent= <div className="container row h-100" style={{minHeight: "100vh", marginTop: "90px"}}>
-    <div className="cart col-8">
+    cartContent= <div className=" row " style={{marginTop: "20px"}}>
+    <div className="cart col-lg-8 col-md-6 col-sm-12">
         <ul className="collection">
             {addedItemes}
         </ul>
-          <Recipe />
     </div>  
-    <div className="col-4 fixed">
+    <div className="col-lg-4 col-md-6 col-sm-12">
         <div className="customerInfoFormContainer">
             <form action="">
                 <div className="font-weight-bold text-center mb-4">Kindly fill in your details before proceeding to checkout</div>
                 <div className="form-group">
                     <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" className="form-control" value={this.state.first_name}/>
+                    <input type="text" name="first_name" className="form-control" value={this.state.first_name} onChange={this.handleNames}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="lastName">Last Name</label>
-                    <input type="text" name="lastName" className="form-control" value={this.state.last_name}/>
+                    <input type="text" name="last_name" className="form-control" value={this.state.last_name} onChange={this.handleNames}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
@@ -112,24 +110,28 @@ if(this.props.items.length >0){
                 </div>
                 <div className="form-group">
                     <label htmlFor="phoneNo">Phone Number</label>
-                    <input type="text" name="phoneNo" className="form-control" value={this.state.phone_no}/>
+                    <input type="text" name="phone_no" className="form-control" value={this.state.phone_no}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="deliveryLocation">Address</label>
-                    <input type="text" name="deliveryLocation" className="form-control" value={this.state.address}/>
+                    <input type="text" name=" address" className="form-control" value={this.state.address}/>
                 </div>
                 <div><button className="btn">Submit</button></div>
             </form>
         </div>
     </div>
-  
+
     {/* Recipe added */}
+    <Recipe />
+  
 </div>
 }
         
        return(
-           <div className="h-100">
+           <div className="container h-100" style={{minHeight: "100vh", marginTop: "90px"}}>
+               <div className="font-weight-bold font-26">Cart</div>
                {cartContent}
+               
            </div>
        )
     }
