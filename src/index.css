@@ -418,3 +418,9 @@ right: -400px;
   border: 2px solid #f3f3f8;
   border-radius: 6px;
 }
+.errorWrap{
+  background-color: #ffedbb;
+  border-radius: 6px;
+  border: 1px solid #d49d04;
+  color: #6b5006;
+}

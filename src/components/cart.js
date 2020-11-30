@@ -5,7 +5,8 @@ import { removeItem,addQuantity,subtractQuantity} from './actions/cartActions';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Recipe from "./recipe"
 import {faPlusCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
-
+let errorMessage
+let errorTitle
 class Cart extends Component{
     constructor(props){
         super(props);
@@ -14,8 +15,9 @@ class Cart extends Component{
             last_name:"",
             email:"",
             address:"",
-            phone_no: ""
-
+            phone_no: "",
+            process: false,
+            displayError: false
         }
     }
  //to remove the item completely
@@ -31,15 +33,87 @@ handleSubtractQuantity = (id)=>{
     this.props.subtractQuantity(id);
     
 }
-handleNames=(e)=>{
+handleInput=(e)=>{
     const value = e.target.value;
     this.setState({
       ...this.state,
       [e.target.name]: value
+      
     });
+    // errorMessage=""
+    this.setState({displayError: false})
+
+}
+// handlePhone=(e)=>{
+// e.target.value.replace(/[^0-9]/g, '')
+ 
+//     this.setState({
+//  phone_no: e.target.value
+//     });
+// }
+addCustomerDetail = async(e,   first_name,
+    last_name,
+    email,
+    address,
+    phone_no,) =>{
+        e.preventDefault();
+    if(first_name.length < 2){
+        // console.log("wrong first anme")
+        // alert("Enter First name") 
+        this.setState({displayError: true})
+        errorTitle= "Invalid Input"
+
+        errorMessage="Enter First name"
+    }
+    else if(last_name.length < 2){
+        // console.log("wrong last anme") 
+        // alert("Enter Last name")
+        this.setState({displayError: true})
+
+        errorTitle= "Invalid Input"
+        errorMessage="Enter Last Name"
+
+
+    }
+    else if (
+        !/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/.test(
+          email
+        )
+      ){
+        // alert( "Enter email")
+        this.setState({displayError: true})
+        errorTitle= "Invalid Input"
+
+        errorMessage="Enter Email "
+
+      }
+   
+    else if (!/\d{10,20}/.test(phone_no)){
+
+        // console.log("wrong first anme") 
+        // alert( "Enter PhoneNo")
+        this.setState({displayError: true})
+        errorTitle= "Invalid Input"
+        errorMessage="Enter Phone Number"
+    }
+    else if(address.length < 15){
+        // console.log("wrong first anme") 
+        // alert( "Enter Address")
+        this.setState({displayError: true})
+        errorTitle= "Invalid Input"
+
+        errorMessage="Enter Address"
+    }
 }
     render(){
-              
+        const {
+            first_name,
+            last_name,
+            email,
+            address,
+            phone_no,
+          } = this.state;
+              console.log(first_name)
         let addedItemes = 
             (  
                 this.props.items.map(item=>{
@@ -93,30 +167,50 @@ if(this.props.items.length >0){
         </ul>
     </div>  
     <div className="col-lg-4 col-md-6 col-sm-12">
+        {this.state.displayError &&(
+            <div className=" errorWrap text-center p-3 my-3" >
+                <div className="font-weight-bold font-15 mb-2">{errorTitle}</div>
+               <div className="font-13">{errorMessage}</div> 
+                </div>
+
+        )}
         <div className="customerInfoFormContainer">
-            <form action="">
+            <form action="post"
+            onSubmit={e => {
+                e.preventDefault();
+                this.setState({ process: true });
+                this.addCustomerDetail(
+                  e,
+                  first_name,
+                   last_name,
+                   email,
+                   address,
+                   phone_no,
+                );
+              }}
+            >
                 <div className="font-weight-bold text-center mb-4">Kindly fill in your details before proceeding to checkout</div>
                 <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="first_name" className="form-control" value={this.state.first_name} onChange={this.handleNames}/>
+                    <label htmlFor="first_name">First Name</label>
+                    <input type="text" name="first_name" className="form-control" value={first_name} onChange={this.handleInput}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" name="last_name" className="form-control" value={this.state.last_name} onChange={this.handleNames}/>
+                    <label htmlFor="last_name">Last Name</label>
+                    <input type="text" name="last_name" className="form-control" value={last_name} onChange={this.handleInput}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="text" name="email" className="form-control" value={this.state.email}/>
+                    <input type="text" name="email" className="form-control" value={email} onChange={this.handleInput}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="phoneNo">Phone Number</label>
-                    <input type="text" name="phone_no" className="form-control" value={this.state.phone_no}/>
+                    <label htmlFor="phone_no">Phone Number</label>
+                    <input type="tel" name="phone_no" className="form-control"  value={phone_no} onChange={this.handleInput}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="deliveryLocation">Address</label>
-                    <input type="text" name=" address" className="form-control" value={this.state.address}/>
+                    <label htmlFor="address">Address</label>
+                    <input type="text" name="address" className="form-control" value={address} onChange={this.handleInput}/>
                 </div>
-                <div><button className="btn">Submit</button></div>
+                <div><button className="btn btn-formSubmit" type="submit" >Submit</button></div>
             </form>
         </div>
     </div>
