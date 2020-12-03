@@ -84,7 +84,7 @@ componentDidMount(){
                             
                             {newArrivals.map(item =>(
                                 
-                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 "  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
+                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6  mb-5"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
                                     <div className="showbtn text-center " style={{minHeight: "320px"}}><div><img src={item.img} alt="" width="100%"/></div>
                                     <div className="font-weight-bold font-13 mt-2">{item.title}</div>
 
@@ -174,7 +174,7 @@ Cozy collections is the modern fashion accessories market</div>
                         <div className="text-center mb-5 font-16">Here are a few of our recently ordered goods<br/> </div>
                         <div className="row  mx-0 px-0">
                             {newArrivals.map(item =>(
-                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-4"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
+                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-5"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
                                     <div className="showbtn text-center"><div><img src={item.img} alt="" width="100%"/></div>
                                     <div className="font-weight-bold font-13 mt-2">{item.title}</div>
 
@@ -191,9 +191,9 @@ Cozy collections is the modern fashion accessories market</div>
                         </div>
                     </div>
                     <div className="row  mx-0 px-0 mt-5 ">
-                        <div className="col-lg-4 "><Fade left><div className="bg-shoes"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Shoes</div></div></Fade></div>
-                        <div className="col-lg-4 "><Zoom><div className="bg-bags"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Bags</div></div></Zoom></div>
-                        <div className="col-lg-4 "><Fade right><div className="bg-watch"> <div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Watches</div></div></Fade></div>
+                        <div className="col-lg-4 col-sm-12"><Fade left><div className="bg-shoes"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Shoes</div></div></Fade></div>
+                        <div className="col-lg-4 col-sm-12"><Zoom><div className="bg-bags"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Bags</div></div></Zoom></div>
+                        <div className="col-lg-4 col-sm-12"><Fade right><div className="bg-watch"> <div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Watches</div></div></Fade></div>
 
                     </div>
     

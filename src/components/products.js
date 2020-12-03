@@ -31,7 +31,7 @@ constructor(props){
     render(){
         let itemList = this.props.items.map(item=>{
             return(
-                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-5"  key={item.id}>
+                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 my-5"  key={item.id}>
                                     <div className="showbtn text-center"><div><img src={item.img} alt="" width="100%"/></div>
                                    <div className="font-weight-bold font-13 mt-2">{item.title}</div>
                                    <div><span> <b>&#8358;{item.price}</b> </span></div>
