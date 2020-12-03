@@ -123,8 +123,8 @@ height: 500px
 }
 .showbtn{
 cursor: pointer;
-min-height: 330px;
-transition: transform .3s;
+/* min-height: 330px; */
+/* transition: transform .3s; */
 }
 .firstImg{
 border-bottom: 2px solid #EBE7E7;
@@ -235,14 +235,14 @@ li a {
  
   /* footer responsive */
   .footer-container {
-    font-size: 0.62rem !important;
+    font-size: 0.7rem !important;
   }
   h5 {
     font-size: 0.9rem !important;
   }
   .footer-input::placeholder {
     color: #fff !important;
-    font-size: 0.63rem !important;
+    font-size: 0.68rem !important;
   }
   .footer-link-box{
     position: relative !important;
@@ -290,7 +290,7 @@ li a {
     /* items */
     .showbtn{
       cursor: pointer;
-      min-height: 350px !important;
+      min-height: 410px !important;
       transition: transform .3s;
       }
 }
