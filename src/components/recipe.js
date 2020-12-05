@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 class Recipe extends Component{
-
+constructor(props){
+    super(props);
+    this.state={
+displayError: false
+    }
+}
     componentWillUnmount() {
+    
+
             // if(this.refs.shipping.checked)
             //     this.props.substractShipping()
     }
@@ -14,9 +21,16 @@ class Recipe extends Component{
     //         this.props.substractShipping();
     //     }
     // }
+    
+    handleCheckout=()=>{
+        console.log(" you clicked to checkout")
+        if(!this.props.userData){
+            this.setState({  displayError: true})
+            setTimeout( this.setState({  displayError: false}), 500)
+        }
+    }
 
     render(){
-        
         return(
             <div className="container">
                 <div className="collection">
@@ -28,8 +42,13 @@ class Recipe extends Component{
                         </li>
                         <li className="collection-item"><b>Total: {this.props.total} &#8358;</b></li>
                     </div>
+                    {
+                        this.state.displayError &&(
+                            <div>Error</div>
+                        )
+                    }
                     <div className="checkout">
-                        <button className=" btn btn-checkout" onClick={this.handleCheckout}>Checkout</button>
+                        <button className=" btn btn-checkout" onClick={this.handleCheckout} disabled={!this.props.userData}>Checkout</button>
                     </div>
                  </div>
         )
@@ -39,7 +58,8 @@ class Recipe extends Component{
 const mapStateToProps = (state)=>{
     return{
         addedItems: state.addedItems,
-        total: state.total
+        total: state.total,
+        userData: state.user_data
     }
 }
 

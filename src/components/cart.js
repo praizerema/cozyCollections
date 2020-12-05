@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { removeItem,addQuantity,subtractQuantity} from './actions/cartActions';
+import { removeItem,addQuantity,subtractQuantity, addUserData} from './actions/cartActions';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Recipe from "./recipe"
 import {faPlusCircle, faMinusCircle} from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +17,8 @@ class Cart extends Component{
             address:"",
             phone_no: "",
             process: false,
-            displayError: false
+            displayError: false,
+            userData: {}
         }
     }
  //to remove the item completely
@@ -103,6 +104,19 @@ addCustomerDetail = async(e,   first_name,
         errorTitle= "Invalid Input"
 
         errorMessage="Enter Address"
+    }
+    else{
+        const params = {
+            data: {
+                "firstName": first_name,
+                "lastName": last_name,
+                "email": email,
+                "phoneNo": phone_no,
+                "address": address
+            }
+        };
+// this.setState({userData: params})
+this.props.addUserData(params)
     }
 }
     render(){
@@ -238,12 +252,12 @@ const mapStateToProps = (state)=>{
     }
 }
 
-const mapDispatchToProps = (dispatch)=>{
-    return{
-        removeItem: (id)=>{dispatch(removeItem(id))},
-        addQuantity: (id)=>{dispatch(addQuantity(id))},
-        subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(Cart)
+// const mapDispatchToProps = (dispatch)=>{
+//     return{
+//         removeItem: (id)=>{dispatch(removeItem(id))},
+//         addQuantity: (id)=>{dispatch(addQuantity(id))},
+//         subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
+//     }
+// }
+export default connect(mapStateToProps, {removeItem, addQuantity, subtractQuantity, addUserData})(Cart)
 

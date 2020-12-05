@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from './action-types/cart-actions'
+import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY,ADD_USER_DATA } from './action-types/cart-actions'
 
 //add cart action
 export const addToCart= (id)=>{
@@ -26,5 +26,12 @@ export const addQuantity=(id)=>{
     return{
         type: ADD_QUANTITY,
         id
+    }
+}
+export const addUserData=(data)=>{
+    console.log(data)
+    return{
+        type: ADD_USER_DATA ,
+        data
     }
 }
