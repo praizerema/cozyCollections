@@ -31,7 +31,7 @@ constructor(props){
     render(){
         let itemList = this.props.items.map(item=>{
             return(
-                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 my-3"  key={item.id}>
+                <div className="col-lg-3 col-md-4 col-sm-12 "  key={item.id}>
                                     <div className="showbtn text-center"><div><img src={item.img} alt="" width="100%"/></div>
                                    <div className="font-weight-bold font-13 mt-2">{item.title}</div>
                                    <div><span> <b>&#8358;{item.price}</b> </span></div>
@@ -43,14 +43,14 @@ constructor(props){
             )
         })
         return(
-            <div className= "container " style={{marginTop: "90px"}}>
+            <div className= "container py-5 h-100 w-100" style={{marginTop: "90px"}}>
                 {/* <h3 className="text-center pb-3">Enjoy your shopping</h3> */}
-                <div className="box row py-5">
+                <div className=" row ">
                     {itemList}
                 </div>
                 {
                   this.state.showAddCartDecision &&(
-                    <div className="card  row mt-5 showView"> 
+                    <div className="  row mt-5 showView"> 
                       <span className="close text-right"
                                 onClick={
                                     e => this.setState({showAddCartDecision: false})

@@ -24,10 +24,10 @@ displayError: false
     
     handleCheckout=()=>{
         console.log(" you clicked to checkout")
-        if(!this.props.userData){
-            this.setState({  displayError: true})
-            setTimeout( this.setState({  displayError: false}), 500)
-        }
+        // if(!this.props.userData){
+        //     this.setState({  displayError: true})
+        //     setTimeout( this.setState({  displayError: false}), 500)
+        // }
     }
 
     render(){

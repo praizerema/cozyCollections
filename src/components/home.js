@@ -45,7 +45,31 @@ componentDidMount(){
     
 
     render(){
+    //   var getBrowserWidth = function(){
+    //     if(window.innerHeight < 768 && window.innerWidth< 768 ){
+    //         // Extra Small Device
+    //         alert("extra small")
 
+    //         return "xs";
+    //     } else if(window.innerHeight < 991 && window.innerWidth < 991){
+    //         // Small Device
+    //         alert(" small")
+
+    //         return "sm"
+    //     } else if(window.innerWidth < 1199){
+    //         // Medium Device
+    //         alert("medium")
+
+    //         return "md"
+    //     } else {
+    //         // Large Device
+    //         alert("large")
+
+    //         return "lg"
+    //     }
+    // };
+
+    // var device = getBrowserWidth();
         var newArrivals=this.props.items.slice(4, 8)
 //         let itemList = this.props.items.map(item=>{
 //             return(
@@ -65,12 +89,12 @@ componentDidMount(){
 //             )
 //         })
         return(
-            <div className= "container-fluid homePage px-0 w-100">
+            <div className= "homePage w-100 h-100">
                 <div className="firstImg" >
                     {/* <img src={bgImage} alt="" width="100%" height="400" style={{objectFit: "cover"}}/> */}
-                    <div className=" font-weight-bold px-5 bg-txt"> <Flip left> <div className="font-36" > Cozy collections </div> <div className="font-24" >We've Got All Your Fashion Needs Covered.</div></Flip></div>
+                    <div className=" font-weight-bold  bg-txt"> <Flip top> <div className="font-36" > Cozy collections </div> <div className="font-24" >We've Got All Your Fashion Needs Covered.</div></Flip></div>
                 </div>
-                <div className="container">
+                <div className="container -fluid">
                     <div className="row mx-0" style={{ backgroundColor:"#fff", borderBottom:"1px solid #EBE7E7", padding:"50px 0"}}>
 <div className="col-lg-4 text-center col-sm-12 noRborder mb-5" style={{borderRight: "1px solid #EBE7E7"}}><div className="font-24">Latest Collections</div><div className="font-16">We got you covered on the latest fashion trend</div></div>
 <div className="col-lg-4 text-center col-sm-12 noRborder mb-5" style={{borderRight: "1px solid #EBE7E7"}}><div className="font-24">Support 24/7</div><div className="font-16">Holla at us on our social media platforms</div></div>
@@ -80,12 +104,12 @@ componentDidMount(){
                     <div className="mt-5 ">
                         <div className="text-center font-36 font-weight-bold mb-3">New Arrivals</div>
                         <div className="text-center mb-5 font-16">Check out some of our new arrivals, no doubt<br/>  they will look really nice on you</div>
-                        <div className="row  mx-0 px-0">
+                        <div className="row">
                             
                             {newArrivals.map(item =>(
                                 
-                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6  mb-3"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
-                                    <div className="showbtn text-center " style={{minHeight: "320px"}}><div><img src={item.img} alt="" width="100%"/></div>
+                                <div className="col-lg-3 col-md-4 col-sm-12 col-xs-12 "  key={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
+                                    <div className="showbtn text-center "><div><img src={item.img} alt="" width="100%"/></div>
                                     <div className="font-weight-bold font-13 mt-2">{item.title}</div>
 
                                    <div><span> <b>&#8358;{item.price}</b> </span></div>
@@ -100,7 +124,7 @@ componentDidMount(){
                         </div>
                     </div>
                     
-                    <div className="row mx-0 mt-5  pt-3 px-0">
+                    <div className="row mt-5  pt-3">
                         <div className="col-lg-6 col-sm-12 slides" >
                         <Slide bottom>
                         <Carousel controls= {false}>
@@ -172,9 +196,9 @@ Cozy collections is the modern fashion accessories market</div>
                     <div>
                         <div className="text-center font-36 font-weight-bold ">Recently Ordered </div>
                         <div className="text-center mb-5 font-16">Here are a few of our recently ordered goods<br/> </div>
-                        <div className="row  mx-0 px-0">
+                        <div className="row">
                             {newArrivals.map(item =>(
-                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-3"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
+                                <div className="col-lg-3 col-md-4 col-sm-6 col-xs-6"  key={item.id} id={item.id} onMouseOver={()=>{this.itemFocus(item.id)}}>
                                     <div className="showbtn text-center"><div><img src={item.img} alt="" width="100%"/></div>
                                     <div className="font-weight-bold font-13 mt-2">{item.title}</div>
 
@@ -190,10 +214,10 @@ Cozy collections is the modern fashion accessories market</div>
                             }
                         </div>
                     </div>
-                    <div className="row  mx-0 px-0 mt-5 ">
-                        <div className="col-lg-4 col-sm-12"><Fade left><div className="bg-shoes"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Shoes</div></div></Fade></div>
-                        <div className="col-lg-4 col-sm-12"><Zoom><div className="bg-bags"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Bags</div></div></Zoom></div>
-                        <div className="col-lg-4 col-sm-12"><Fade right><div className="bg-watch"> <div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Watches</div></div></Fade></div>
+                    <div className="row mt-5 ">
+                        <div className="col-lg-4 col-sm-12 py-5"><Fade left><div className="bg-shoes"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Shoes</div></div></Fade></div>
+                        <div className="col-lg-4 col-sm-12 py-5"><Zoom><div className="bg-bags"><div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Bags</div></div></Zoom></div>
+                        <div className="col-lg-4 col-sm-12 py-5"><Fade right><div className="bg-watch"> <div className="font-weight-bold font-16 px-5 text-right" style={{position:"relative", top:"10px"}}>Watches</div></div></Fade></div>
 
                     </div>
     
