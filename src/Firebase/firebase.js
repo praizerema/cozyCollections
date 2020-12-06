@@ -4,15 +4,14 @@ import "firebase/database";
 import firebase from "firebase";
 
 export const config = {
-  apiKey: "AIzaSyBjxu8fvzv-g7_o_uOigYRwhBvxBt3Q14Q",
-  authDomain: "shop-e6864.firebaseapp.com",
-  databaseURL: "https://shop-e6864.firebaseio.com",
-  projectId: "shop-e6864",
-  storageBucket: "shop-e6864.appspot.com",
-  messagingSenderId: "796864063112",
-  appId: "1:796864063112:web:90ef91f5691d6fac3ba13d",
-  measurementId: "G-F7V2ZZH6B3"
-
+  apiKey: "AIzaSyBnuDE8Ljd2cXm5mC2g1xp-qwyJ8TAXsKU",
+  authDomain: "cozy-collections-1dbef.firebaseapp.com",
+  databaseURL: "https://cozy-collections-1dbef-default-rtdb.firebaseio.com",
+  projectId: "cozy-collections-1dbef",
+  storageBucket: "cozy-collections-1dbef.appspot.com",
+  messagingSenderId: "491754147388",
+  appId: "1:491754147388:web:e9bcdfc6db29eabeae3d39",
+  measurementId: "G-7H33DCY0FR"
   // apiKey: firebase.env.REACT_APP_API_KEY,
   // authDomain: process.env.REACT_APP_AUTH_DOMAIN,
   // databaseURL: process.env.REACT_APP_DATABASE_URL,

@@ -441,16 +441,3 @@ right: -400px;
       }
 }
 
-@media only screen and (min-width: 650px), only screen and (min-height: 650px) {
-
-
-  *{
-    background-color: blueviolet !important;
-  }
-  .showbtn{
-    cursor: pointer;
-    /* height: 380px !important; */
-    min-height: 500px !important;
-    transition: transform .3s;
-    }
-}
